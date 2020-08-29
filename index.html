@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./public.css">
+    <style>
+
+      .puic_wid {width:1200px;margin:0 auto;}
+/*房贷计算*/
+.y_lploat_cent{ padding: 20px 15px;}
+.Real_trends {background: #fff;border-radius: 2px;margin-top: 40px;position: relative;border-radius:5px;}
+.Real_trends .trends_Box{
+  height: 30px;
+  position: absolute;
+  top: 100px;
+  left: 88px;
+  z-index: 10;
+}
+.Real_trends .trends_Box li{
+  float: left;
+  border: 1px solid red;
+  padding: 3px 8px;
+  font-size: 14px;
+  color: #333;
+  margin-right: 35px;
+}
+.Real_trends .Top {
+  width: 100%;
+  height: 70px;
+  border-bottom: 1px solid #eeeeee;
+  padding: 0 30px;
+  line-height: 70px;
+}
+.Real_trends .Top h4 {
+  font-size: 20px;
+  float: left;
+}
+.Real_trends .Top h4 i {
+  font-size: 14px;
+  padding-left: 15px;
+}
+.Real_trends .Top a {
+  float: right;
+  font-size: 14px;
+  color: #999999;
+}
+.Real_trends .Top a:hover {
+  color: #262d37;
+}
+.Real_trends .Top p {
+  float: right;
+}
+.Real_trends .Top p i {
+  font-size: 14px;
+  border-right: 1px solid #262d37;
+  padding-left: 8px;
+  padding-right: 10px;
+  cursor: pointer
+}
+.Real_trends .Top p i a {
+  float: none;
+  color: #262d37;
+}
+.Real_trends .Top p i a:hover{
+  color:#e9333c;
+}
+.Real_trends .Top p i:last-child {
+  border-right: 0;
+}
+.Real_trends .Top span {
+  float: left;
+  display: inline-block;
+  padding-top: 3px;
+  line-height: 67px;
+  padding-left: 5px;
+}
+.Real_trends .Top span i {
+  font-size: 14px;
+  border-right: 1px solid #262d37;
+  padding-left: 8px;
+  padding-right: 10px;
+}
+.Real_trends .Top span i:hover a{
+  color: #e9333c;
+}
+.Real_trends .Top span i a {
+  float: none;
+  color: #262d37;
+}
+.Real_trends .Top span i:last-child {
+  border-right: 0;
+}
+.Real_trends .trends_cun {
+  width: 100%;
+  padding: 0 30px;
+}
+
+.Real_trends .trends_count {
+  width: 100%;
+  float: left;
+}
+.Real_trends .trends_count .count_Box {
+  width: 100%;
+  padding-top: 50px;
+  float: left;
+  position: relative;
+}
+.Real_trends .trends_count .count_Box:before{content:"";width:1px;height:414px;background:#E5E5E5;position:absolute;left:585px;top:80px;} 
+
+.Real_trends .trends_count .count_Box .countL {
+  width: 400px;
+  float: left;
+  position: relative;
+  left: 55px;
+}
+.Real_trends .trends_count .count_Box .countL h4 {
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  padding-bottom: 30px;
+}
+.Real_trends .trends_count .count_Box .countL .p-tip {
+  color: #bbb;
+  font-size: 12px;
+  height: 12px;
+  margin-bottom: 30px;
+  float: left;
+}
+.Real_trends .trends_count .count_Box .countL .count_lst {
+  width: 100%;
+  float: left;
+}
+.Real_trends .trends_count .count_Box .countL .count_lst li {
+  width: 100%;
+  padding-bottom: 15px;
+  float: left;
+}
+.Real_trends .trends_count .count_Box .countL .count_lst li label {
+  float: left;
+  padding-right: 23px;
+  line-height: 45px;
+  width:100px;
+  font-size:15px;
+  color:#534e4e;
+
+}
+.Real_trends .trends_count .count_Box .countL .count_lst li label i {
+  padding: 0 12px;
+}
+.Real_trends .trends_count .count_Box .countL .count_lst li .lst_box {
+  width: 260px;
+  height: 45px;
+  float: left;
+  border: 1px solid #dddddd;
+  border-radius: 2px;
+  position: relative;
+  box-sizing: border-box;
+}
+.Real_trends .trends_count .count_Box .countL .count_lst li .lst_box .lst_text {
+  color:#9F7B5F;
+  width: 317px;
+  height: 100%;
+  display: inline-block;
+  padding-left: 20px;
+  line-height: 45px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.Real_trends .trends_count .count_Box .countL .count_lst li .lst_box p {
+  position: absolute;
+  top: 46px;
+  left: 0;
+  font-size: 12px;
+  color: #e9333c;
+  padding-left: 20px;
+  display: none;
+}
+.Real_trends .trends_count .count_Box .countL .count_lst li .lst_box i {
+  width: 8px;
+  height: 5px;
+  background: url('/image/v2/ico_38.png') no-repeat center center;
+  position: absolute;
+  top: 20px;
+  right: 25px;
+}
+.Real_trends .trends_count .count_Box .countL .count_lst li .lst_box i.cur{
+  background: url('/image/v2/ico_38.png') no-repeat center center;
+}
+.Real_trends .trends_count .count_Box .countL .count_lst li .lst_box .lst_cun {
+  width: 260px;
+  position: absolute;
+  top: 44px;
+  left: -1px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  max-height: 215px;
+  overflow-y: auto;
+  border-top: none;
+  z-index: 999;
+  box-sizing: border-box;
+  display: none;
+  overflow-x:hidden;
+}
+.Real_trends .trends_count .count_Box .countL .count_lst li .lst_box .lst_cun li {
+  width: 100%;
+  padding: 16px 21px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.Real_trends .trends_count .count_Box .countL .count_lst li .lst_box .lst_cun li:hover {
+  background: #f8fafc;
+  color: #e9333c;
+}
+.Real_trends .trends_count .count_Box .countL .count_lst li .lst_box .money {
+  position: absolute;
+  top: 0;
+  right: 21px;
+  font-size: 16px;
+  color: #cfcfcf;
+  line-height: 45px;
+}
+.Real_trends .trends_count .count_Box .countL .count_lst li .Total {
+  width: 237px;
+  height: 100%;
+  border: 0;
+  padding-left: 20px;
+  line-height: 45px;
+  font-size: 16px;
+  color: #9F7B5F;
+}
+.Real_trends .trends_count .count_Box .countL .count_lst li .dk_money{
+  disabled:disabled;
+  background: #FFF;
+}
+.Real_trends .trends_count .count_Box .countL .count_lst li.group {
+  display: none;
+}
+.Real_trends .trends_count .count_Box .countR {
+  width: 420px;
+  float: right;
+  position: relative;
+  right: 30px;
+}
+.Real_trends .trends_count .count_Box .countR h4 {
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  padding-bottom: 30px;
+}
+.Real_trends .trends_count .count_Box .countR .countR_box {
+  width: 100%;
+  height: 415px;
+}
+.Real_trends .trends_count .count_Box .countR .countR_box .countR_cut {
+  width: 100%;
+  float: left;
+}
+.Real_trends .trends_count .count_Box .countR .countR_box .countR_cut li {
+  width: 50%;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 16px;
+  border-bottom: 1px solid #dddddd;
+  float: left;
+  cursor: pointer;
+}
+.Real_trends .trends_count .count_Box .countR .countR_box .countR_cut li.on{
+  padding-bottom: 9px;
+  border-bottom: 3px solid #E9333C;
+}
+.Real_trends .trends_count .count_Box .countR .countR_box .echart_box {
+  width: 100%;
+  padding: 30px 0;
+  border-bottom: 1px dashed #ccc;
+  float: left;
+}
+.Real_trends .trends_count .count_Box .countR .countR_box .echart_box .echart_img {
+  float: left;
+  width: 160px;
+  height: 160px;
+}
+.Real_trends .trends_count .count_Box .countR .countR_box .echart_box .echart_data {
+  float: left;
+  margin-left: 20px;
+  padding: 12px 0 2px 0;
+}
+.Real_trends .trends_count .count_Box .countR .countR_box .echart_box .echart_data .data_line {
+  width: 100%;
+  height: 46px;
+  line-height: 46px;
+  font-size: 15px;
+  vertical-align: middle;
+}
+.Real_trends .trends_count .count_Box .countR .countR_box .echart_box .echart_data .data_line i {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-top: -3px;
+  margin-right: 10px;
+}
+.Real_trends .trends_count .count_Box .countR .countR_box .echart_box .echart_data .loansum_line i {
+  background-color: #608cfb;
+}
+.Real_trends .trends_count .count_Box .countR .countR_box .echart_box .echart_data .interest_line i {
+  background-color: #ff794f;
+}
+.Real_trends .trends_count .count_Box .countR .countR_box .echart_box .echart_data .fstprice_line i {
+  background-color: #fbae35;
+}
+.Real_trends .trends_count .count_Box .countR .countR_box .bus_fstmonth {
+  margin-top: 28px;
+  height: 50px;
+  line-height: 50px;
+  text-align: right;
+  padding-right: 8px;
+  font-size: 17px;
+  width: 100%;
+  float: left;
+}
+.Real_trends .trends_count .count_Box .countR .countR_box .bus_fstmonth span {
+  font-size: 36px;
+  color: #dd0009;
+  font-family: Arial;
+  padding: 0 10px;
+}
+.Real_trends .trends_count .count_Box .countR .countR_box .bus_monthcut {
+  width: 100%;
+  text-align: right;
+  padding-right: 8px;
+  font-size: 14px;
+  height: 22px;
+  line-height: 22px;
+}
+.Real_trends .trends_count .count_Box .reckon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -65px;
+  margin-top: -34.5px;
+  background:#FFF;
+  padding:13px 0;
+}
+.Real_trends .trends_count .count_Box .reckon input {
+  width: 130px;
+  height: 45px;
+  border: 0;
+  background: #FFB92E;
+  font-size: 18px;
+  color: #FFF;
+  border-radius:5px;
+}
+.m_countL_title{}
+.m_countL_title img{float:left;width:32px;height:40px;}
+.m_countL_text{float:left;margin-left:10px;margin-bottom:20px;}
+.m_countL_text em{font-size:16px;color:#333;}
+.m_countL_text span{font-size:12px;color:#999;margin-top:5px;display:block;}
+    </style>
+
+</head>
+<body>
+    
+<!-- 贷款计算 -->
+    <div class="puic_wid" id="Calculation">
+        <div class="Real_trends y_lploat_cent c">
+            <div class="m_Title_public">
+                <em>房贷<span>计算</span></em>
+            </div>
+            <div class="trends_count">
+                <div class="count_Box">
+                    <div class="countL">
+                        <div class="m_countL_title c">
+                            <img src="/image/v2/lpindex/m_fdjs1.png" alt="">
+                            <div class="m_countL_text">
+                                <em>房贷计算器</em>
+                                <span>选择基本情况，帮您快速计算房贷</span>
+                            </div>
+                        </div>
+                        <ul class="count_lst">
+                            <li>
+                                <label>户<i></i>型</label>
+                                <div class="lst_box">
+                                    <span class="lst_text house_type">请选择户型</span>
+                                    <i></i>
+                                    <ul class="lst_cun house">
+                                        <li data-money="1612500">二室二厅一厨一卫(75.0m²)</li>
+                                        <li data-money="1935000">三室二厅一厨一卫(90.0m²)</li>
+                                        <li data-money="2128500">三室二厅一厨二卫(99.0m²)</li>
+                                        <li data-money="2644500">四室二厅一厨二卫(123.0m²)</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <label>房款总额</label>
+                                <div class="lst_box">
+                                    <input class="Total hous_sumprice" type="text" placeholder="请输入房款总额">
+                                    <span class="money">万元</span>
+                                    <p class="pit_txt">请输入正确的金额</p>
+                                </div>
+                            </li>
+                            <li>
+                                <label>首付成数</label>
+                                <div class="lst_box">
+                                    <span data-id="0.3" class="lst_text bus_ipt_floor">3成</span>
+                                    <i></i>
+                                    <ul class="lst_cun floor_pull">
+                                        <li data-val="0.1">1成</li>
+                                        <li data-val="0.2">2成</li>
+                                        <li data-val="0.3">3成</li>
+                                        <li data-val="0.4">4成</li>
+                                        <li data-val="0.5">5成</li>
+                                        <li data-val="0.6">6成</li>
+                                        <li data-val="0.7">7成</li>
+                                        <li data-val="0.8">8成</li>
+                                        <li data-val="0.9">9成</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <label>贷款方式</label>
+                                <div class="lst_box">
+                                    <span class="lst_text loan_floor">商业贷款</span>
+                                    <i></i>
+                                    <ul class="lst_cun loan">
+                                        <li>商业贷款</li>
+                                        <li>公积金贷款</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="group">
+                                <label>贷款总额</label>
+                                <div class="lst_box">
+                                    <input class="Total dk_money" disabled="disabled" type="text">
+                                    <span class="money">万元</span>
+                                    <p class="pit_txt">请输入正确的金额</p>
+                                </div>
+                            </li>
+                            <li class="group">
+                                <label>公贷金额</label>
+                                <div class="lst_box">
+                                    <input class="Total gd_money" type="text" placeholder="请输入公贷金额">
+                                    <span class="money">万元</span>
+                                </div>
+                            </li>
+                            <li class="group">
+                                <label>商贷金额</label>
+                                <div class="lst_box">
+                                    <input class="Total sd_money" type="text" placeholder="请输入商贷金额">
+                                    <span class="money">万元</span>
+                                </div>
+                            </li>
+                            <li class="group">
+                                <label>公贷利率</label>
+                                <div class="lst_box">
+                                    <input class="Total gd_lilv" value="3.25" type="text" placeholder="请输入公贷利率">
+                                    <span class="money">%</span>
+                                    <p class="pit_txt">请输入正确的贷款利率</p>
+                                </div>
+                            </li>
+                            <li class="group">
+                                <label>商贷利率</label>
+                                <div class="lst_box">
+                                    <input class="Total sd_lilv" value="4.90" type="text" placeholder="请输入商贷利率">
+                                    <span class="money">%</span>
+                                    <p class="pit_txt">请输入正确的贷款利率</p>
+                                </div>
+                            </li>
+                            <li class="goods">
+                                <label>贷款利率</label>
+                                <div class="lst_box">
+                                    <input class="Total bus_ipt_rate" value="4.90" type="text" placeholder="请输入贷款利率">
+                                    <span class="money">%</span>
+                                    <p class="pit_txt">请输入正确的贷款利率</p>
+                                </div>
+                            </li>
+                            <li>
+                                <label>贷款年限</label>
+                                <div class="lst_box">
+                                    <span data-id="360" class="lst_text Life_floor">30年(360期)</span>
+                                    <i></i>
+                                    <ul class="lst_cun Life">
+                                        <li data-val="24">2年(24期)</li>
+                                        <li data-val="36">3年(36期)</li>
+                                        <li data-val="48">4年(48期)</li>
+                                        <li data-val="60">5年(60期)</li>
+                                        <li data-val="72">6年(72期)</li>
+                                        <li data-val="84">7年(84期)</li>
+                                        <li data-val="96">8年(96期)</li>
+                                        <li data-val="108">9年(108期)</li>
+                                        <li data-val="120">10年(120期)</li>
+                                        <li data-val="180">15年(180期)</li>
+                                        <li data-val="240">20年(240期)</li>
+                                        <li data-val="300">25年(300期)</li>
+                                        <li data-val="360">30年(360期)</li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <p class="p_tip">*商业贷款基准利率为4.90%</p>
+                    </div>
+                    <div class="countR">
+                        <h4>计算结果</h4>
+                        <div class="countR_box bus_tabs">
+                            <ul class="countR_cut tabs_hd c">
+                                <li class="tab_link_bx" data-id="1">等额本息还款</li>
+                                <li class="tab_link_bj" data-id="2">等额本金还款</li>
+                            </ul>
+                            <!-- 等额本息还款< -->
+                            <div class="bus_tab_box bus_tab_bx" data-id="1">
+                                <div class="echart_box c">
+                                    <div class="echart_img" id="de_echart">
+                                        <div></div>
+                                    </div>
+                                    <div class="echart_data echart_data_bj">
+                                        <p class="data_line fstprice_line" style=""><i></i>首期付款：<span
+                                                    class="cnt_val bus_fstprice">0.00</span>万元</p>
+                                        <p class="data_line loansum_line"><i></i>贷款总额：<span class="cnt_val bus_loansum">0.00</span>万元
+                                        </p>
+                                        <p class="data_line interest_line"><i></i>利息总额：<span
+                                                    class="cnt_val bus_bx_interest">0.00</span>万元</p>
+                                    </div>
+                                </div>
+                                <div class="bus_fstmonth">月均还款<span class="cnt_val avg_sum">0.00</span>元</div>
+                            </div>
+                            <!-- 等额本金还款 -->
+                            <div class="bus_tab_box bus_tab_bj" data-id="2" style="display:none;">
+                                <div class="echart_box c">
+                                    <div class="echart_img" id="dj_echart">
+                                        <div></div>
+                                    </div>
+                                    <div class="echart_data">
+                                        <p class="data_line fstprice_line" style=""><i></i>首期付款：<span
+                                                    class="cnt_val bus_fstprice">0.00</span>万元</p>
+                                        <p class="data_line loansum_line"><i></i>贷款总额：<span class="cnt_val bus_loansum">0.00</span>万元
+                                        </p>
+                                        <p class="data_line interest_line"><i></i>利息总额：<span
+                                                    class="cnt_val bus_bj_interest">0.00</span>万元</p>
+                                    </div>
+                                </div>
+                                <div class="bus_fstmonth">首月还款<span class="cnt_val sf_sum">0.00</span>元</div>
+                                <div class="bus_monthcut">每月递减：<span class="cnt_val monthcut">0.00</span>元</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reckon">
+                        <input class="reckon_but" type="button" name="" value="开始计算">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./jquery-3.2.1.min.js"></script>
+<script src="./echarts.common.min.js"></script>
+<script src="./echarts/echarts.js"></script>
+<script src="./calcommon.js"></script>
+<script src="./fdrcalculator.js"></script>
+<script src="./calculator.js"></script>
+<script src="./carousel.min.js"></script>
+<script src="./lory.min.js"></script>
+<script>
+  // 房贷计算 下拉框
+  $(".lst_box").on({
+      mouseover: function() {
+          $(this).children("i").addClass('cur')
+          $(this).children(".lst_cun").show();
+      },
+      mouseout: function() {
+          $(this).children("i").removeClass('cur')
+          $(this).children(".lst_cun").hide();
+      }
+  });
+  // 选项卡
+function tab (name1,name2,name3){;
+    $(name1).on('click',function(){
+        $(name2).hide();
+        var Idoption = $(this).attr(name3);
+        $(name2+'['+name3+''+'='+ Idoption +']').show();
+        $(this).addClass('on').siblings().removeClass('on');
+    })
+    $(name1).eq(0).addClass('on');
+    $(name2).eq(0).show();
+}
+tab('.countR_box ul li','.bus_tab_box','data-id');//楼盘首页 计算结果
+</script>
+</html>
